@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium APK Downloads</title>
+    <style>
+        :root {
+            --primary-glow: rgba(255, 0, 0, 0.5);
+            --bg-dark: #08080a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(255, 0, 0, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 0, 255, 0.1) 0%, transparent 40%);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1.page-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, border 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Animated Glow Background */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--glow-color, rgba(255, 0, 0, 0.15)) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .app-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        .screenshots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .screenshots img {
+            width: 80px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: zoom-in;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .screenshots img:hover {
+            transform: scale(1.8) translateY(-10px);
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .features {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 10px;
+        }
+
+        .features p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-download {
+            background: var(--accent-color, #ff0000);
+            color: white;
+            box-shadow: 0 4px 15px var(--glow-color, rgba(255, 0, 0, 0.3));
+        }
+
+        .btn-download:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 6px 20px var(--glow-color, rgba(255, 0, 0, 0.5));
+        }
+
+        .btn-community {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-community:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Container Colors */
+        .card.red {
+            --accent-color: #ff3b30;
+            --glow-color: rgba(255, 59, 48, 0.3);
+        }
+
+        .card.blue {
+            --accent-color: #007aff;
+            --glow-color: rgba(0, 122, 255, 0.3);
+        }
+
+        .card.green {
+            --accent-color: #34c759;
+            --glow-color: rgba(52, 199, 89, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1.page-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="page-title">Discovery Center</h1>
+
+    <div class="app-grid">
+        <div class="card red">
+            <img src="file_00000000f25871fa996886ba8701c933.png" alt="Icon" class="icon">
+            <div class="app-name">92 PAK NOVA Hack</div>
+
+            <div class="screenshots">
+                <img src="screenshot/herohack.jpg" alt="S1">
+                <img src="screenshot/herohack2.jpg" alt="S2">
+            </div>
+
+            <div class="features">
+                <p>🎯 Colour Prediction Hack</p>
+                <p>💎 Price: 0₹ (Free Lifetime)</p>
+                <p>📈 High Success Rate</p>
+                <p>⚡ No Usage Limits</p>
+            </div>
+
+            <div class="btn-group">
+                <a href="Application/🔥 92Pak Hack Pro 🔥.apk" class="btn btn-download">Install APK</a>
+                <a href="https://whatsapp.com/channel/0029VbBoppg9cDDWApy7CC2C" class="btn btn-community">Join
+                    Community</a>
+            </div>
+        </div>
+
+        <!-- <div class="card blue">
+            <img src="https://via.placeholder.com/150" alt="Icon" class="icon">
+            <div class="app-name">Blue Edition Pro</div>
+
+            <div class="screenshots">
+                <img src="https://via.placeholder.com/80x140" alt="S1">
+                <img src="https://via.placeholder.com/80x140" alt="S2">
+            </div>
+
+            <div class="features">
+                <p>🌌 Dark Mode Optimized</p>
+                <p>🚀 Ultra Fast Server</p>
+                <p>🛡️ Anti-Ban Secure</p>
+            </div>
+
+            <div class="btn-group">
+                <a href="#" class="btn btn-download">Download v2.0</a>
+                <a href="#" class="btn btn-community">Learn More</a>
+            </div>
+        </div> -->
+    </div>
+
+</body>
+
+</html>
